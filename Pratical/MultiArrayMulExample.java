@@ -12,7 +12,7 @@ for(int j=0;j<3;j++)
 for(int k=0;k<3;k++)
 {
 
-result[i][j]=Arr[i][k]*Arr1[i][k];
+result[i][j]=result[i][j]+Arr[i][k]*Arr1[k][j];
 }
 System.out.print(result[i][j]+" ");
 }
