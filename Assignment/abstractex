@@ -1,0 +1,80 @@
+import java.util.*;
+public abstract class Demo
+{
+	 abstract void show();
+	 public void display()
+	 { int sum = 0;
+		 Scanner s=new Scanner(System.in);
+		 System.out.println("Enter the size of the array:");
+		 int size=s.nextInt();
+		 System.out.println("Enter"+size+ "numbers");
+		 int Arr[]=new int[size];
+		 for(int i=0;i<size;i++)
+		 {
+			 Arr[i]= s.nextInt();
+		 }
+		  for(int i=0;i<size;i++)
+		  {
+			  
+			 System.out.println(Arr[i]);
+		  }
+		 
+		  
+			 
+		 }
+	}
+public class A extends Demo
+{
+	void show()
+    {
+      int number, digit, sum = 0;  
+      Scanner sc = new Scanner(System.in);  
+      System.out.print("Enter the number: ");  
+      number = sc.nextInt(); 
+ 
+      while(number > 0)  
+      {  
+    
+         digit = number % 10;  
+
+         sum = sum + digit;  
+ 
+         number = number / 10;  
+      }  
+ 
+        System.out.println("Sum of Digits: "+sum);  
+    }  
+ }  
+ public class B extends A
+{
+	void show()
+	{
+		int num = 370, number, temp, total = 0;
+
+        number = num;
+        while (number != 0)
+        {
+            temp = number % 10;
+            total = total + temp*temp*temp;
+            number /= 10;
+        }
+
+        if(total == num)
+            System.out.println(num + " is an Armstrong number");
+        else
+            System.out.println(num + " is not an Armstrong number");
+    }
+}
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+       B obj1=new B();
+       obj1.show();
+       A obj=new A();
+       obj.show();
+       obj.display();
+	}
+
+}
