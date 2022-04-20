@@ -1,0 +1,74 @@
+public interface Shape
+{
+  abstract void getArea();
+  default void getSides() {
+	  
+  }
+}
+public class Rectangle implements Shape
+{
+	int weidth=3,heigth=5;
+	
+	public void getArea()
+	{
+		
+		int area_rect=weidth*heigth;
+		System.out.println("Area of the rectangle is:"+area_rect);
+	}
+	public void getSides()
+	{
+		System.out.println("Rectangle has 4 sides");
+	}
+	
+  
+}
+class Triangle implements Shape
+{
+
+	int breath=4,heigth=13;
+	public void getArea()
+	{
+		float area_triangle=(breath*heigth)/2;
+		System.out.println("Area of the triangle is:"+area_triangle);
+		
+	}
+	public void getSides()
+	{
+		System.out.println("triangle has 3 sides");
+	}
+	 
+}
+class Square implements Shape
+{
+int side=5;
+	
+	public void getArea()
+	{
+		int area_square=side*side;
+		System.out.println("Area of a square is:"+area_square);
+		
+	}
+	public void getSides()
+	{
+		System.out.println("square has 4 sides");
+	}
+	
+}
+public class MainClass
+{
+
+	public static void main(String[] args) 
+	{
+		Rectangle r=new Rectangle();
+		r.getArea();
+		r.getSides();
+		Square s=new Square();
+		s.getArea();
+		s.getSides();
+		Triangle t=new Triangle();
+		t.getArea();
+		t.getSides();
+		
+	}
+
+}
