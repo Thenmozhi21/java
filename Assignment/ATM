@@ -28,7 +28,7 @@ public class ATM
         	case 4:
         		break;
         }
-	System.out.println("final balance:"+bal);
+	System.out.println("final balance:"+Balance);
 	}
 
 }
