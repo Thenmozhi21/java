@@ -7,6 +7,8 @@ public class ATM
 		Scanner s=new Scanner(System.in);
 		int Balance=60000;
 		int amount,ch;
+		do
+		{
 		System.out.println("Enter choice:\n 1:Deposit \n 2:Withdraw \n 3:Check balance \n 4:Exit");
         ch=s.nextInt();
         System.out.println("Enter amount:");
@@ -28,6 +30,11 @@ public class ATM
         	case 4:
         		break;
         }
+	System.out.println("do you want to do the process again");
+		ans=s.next().charAt(0);
+        }
+	 while(ans=='y'||ans=='Y');
+        
 	System.out.println("final balance:"+Balance);
 	}
 
