@@ -1,0 +1,46 @@
+public class StringCompareEx 
+
+{
+	public void display()
+	{
+		String m="thenmozhi";//string literal
+    	String m1="thenmozhi";
+    	String m2=new String("thenmozhi.v");//String new keyword
+    	String m3="THENMOZHI";
+    	String e="apple";
+    	String e1="bat";
+    	String e3="Apple";
+    	
+    	System.out.println(m);
+    	System.out.println(m1);
+    	System.out.println(m2);
+    	//equals 
+    	System.out.println(m.equals(m1));
+    	System.out.println(m1.equals(m2));
+    	System.out.println(m.equals(m3));
+    	System.out.println(m.equalsIgnoreCase(m3));
+    	//==
+    	System.out.println(m==m1);
+    	System.out.println(m==m3);
+    	//compareTo
+    	System.out.println(e.compareTo(e1));
+    	System.out.println(e1.compareTo(e3));
+	}
+	public void show()
+	{
+		String s="hello"+" my name is thenmozhi";
+		String s1="hiii"+10+20;
+		String s3=10+10+"hey"+20;
+		System.out.println(s);
+		System.out.println(s1);
+		System.out.println(s3);
+	}
+
+	public static void main(String[] args) 
+	{
+		StringCompareEx e= new StringCompareEx();
+		e.display();
+		e.show();
+	}
+
+}
