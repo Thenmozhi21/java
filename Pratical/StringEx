@@ -1,0 +1,26 @@
+public class StringEx
+{
+    public void show()
+    {
+    	char[] arr= {'j','a','v','a'};
+    	String s=new String(arr);//convert char array to string
+    	System.out.println("value is:"+s);
+        System.out.println(arr);
+    }
+    public void myFunction()
+    {
+    	String m="thenmozhi";//string literal
+    	String m1="thenmozhi";
+    	String m2=new String("thenmozhi.v");//String new keyword
+    	System.out.println(m);
+    	System.out.println(m1);
+    	System.out.println(m2);
+    }
+	public static void main(String[] args) 
+	{
+		
+      StringEx o1=new StringEx();
+      o1.show();
+      o1.myFunction();
+	}
+}
