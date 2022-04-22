@@ -51,6 +51,9 @@ public class Trainee extends Employee
 	{
 		Manager m=new Manager(1243, "peter", "chennai india", 14345,65000);
 		m.calculateSalary();
+		Trainee t=new Trainee(4567,"jack","Mumbai india",3276,45000);
+		t.calculateSalary();
+		
 		
 	}
 
