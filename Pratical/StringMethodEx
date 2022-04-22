@@ -1,0 +1,32 @@
+public class StringMethodEx
+{
+	public void show()
+	{
+		String s="hiii my name is thenmozhi";
+		String s1="IM PURSUING ENGINEERING";
+		String t="  hello  ";
+		System.out.println("UpperCase is:"+s.toUpperCase());
+		System.out.println("LowerCase is:"+s1.toLowerCase());
+		System.out.println("trim is:"+t.trim());
+		System.out.println("startwith is:"+s.startsWith("hii"));
+		System.out.println("endswith is:"+s1.endsWith("ING"));
+		System.out.println("endswith is:"+s1.endsWith("ing"));
+		System.out.println("CharAt is:"+s.charAt(10));
+		System.out.println("CharAt is:"+s.charAt(1));
+		System.out.println("length is:"+s1.length());
+		System.out.println("length is:"+s.length());
+		System.out.println("replace is:"+s1.replace("ENGINEERING","BE(CSE)"));
+		int v=10;
+		String s3=String.valueOf(v);
+		System.out.println("valueOf is :"+s3.valueOf(v));
+		System.out.println(s3+30);
+		
+	}
+
+	public static void main(String[] args)
+	{
+		StringMethodEx m=new StringMethodEx();
+		m.show();
+	}
+
+}
