@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class StringPalindrome
+{
+	public static void show()
+	{
+		String rev="";
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter word:");
+		String word=s.next();
+		int length=word.length();
+		for(int i=length-1;i>=0;i--)
+		{
+			rev=rev+word.charAt(i);
+		}
+		if(word.equals(rev))
+		{
+			System.out.println("palindrome");
+		}
+		else
+			System.out.println("not palindrome");
+	}
+		 
+	
+	
+
+	public static void main(String[] args) 
+	{
+		
+		show();
+	}
+
+}
