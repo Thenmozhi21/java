@@ -1,0 +1,25 @@
+public class ToStringEx 
+{
+	int rollno;
+	String name,addr;
+	  ToStringEx(int rollno,String name,String addr)
+	  {
+		  this.rollno=rollno;
+		  this.name=name;
+		  this.addr=addr;
+	  }
+	  public String toString()
+	  {
+		  return rollno +" "+name +" "+addr+" ";
+	  }
+
+	public static void main(String[] args)
+	{
+		ToStringEx s=new ToStringEx(1,"ravi","chennai");
+		ToStringEx s1=new ToStringEx(2,"raja","mumbai");
+		System.out.println(s);
+		System.out.println(s1);
+
+	}
+
+}
