@@ -1,0 +1,27 @@
+import java.util.StringTokenizer;
+
+public class StringTokenizerEx 
+{
+	public static void myy()
+	{
+		
+		StringTokenizer t=new StringTokenizer("Anudip foundatiojn of carrer and development");
+		while(t.hasMoreTokens())
+		{
+			System.out.println(t.nextToken());
+		}
+		StringTokenizer st=new StringTokenizer("Iam thenmozhi,From chengalpet,Studying BE");
+		while(st.hasMoreTokens())
+		{
+			System.out.println("Next token:"+st.nextToken(","));
+		}
+	}
+
+	public static void main(String[] args)
+	{
+		myy();
+		
+
+	}
+
+}
