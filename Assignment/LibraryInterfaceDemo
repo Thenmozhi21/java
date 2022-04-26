@@ -1,0 +1,96 @@
+public interface LibraryUser 
+{
+	void registerAccount();
+	void requestBook();
+
+}
+
+
+import java.util.*;
+public class KidUsers implements LibraryUser
+{
+	 int age;
+	 String bookType;
+
+	Scanner s=new Scanner(System.in);
+	public void registerAccount() {
+		
+		System.out.println("Enter your age:");
+		 age=s.nextInt();
+		
+		if(age<12)
+		{
+			System.out.println("You have successfully registered under a Kids Account");
+		}
+		else
+			System.out.println("Sorry, Age must be less than 12 to register as a kid");
+	}
+
+	
+	public void requestBook() {
+		
+		
+		System.out.println("Enter booktype:");
+		bookType=s.next();
+		String kids = " ";
+		
+		if(bookType.equals("kids"))
+		{
+		    System.out.println("Book Issued successfully, please return the book within 10 days");
+		}
+		else
+			System.out.println("Oops, you are allowed to take only kids books");
+	}
+
+}
+import java.util.*;
+public class AdultUser implements LibraryUser
+{
+     int age;
+     String bookType;
+	
+ 	Scanner s1=new Scanner(System.in);
+	public void registerAccount() {
+
+		System.out.println("Enter your age:");
+		 age=s1.nextInt();
+		
+		if(age>12)
+		{
+			System.out.println("You have successfully registered under an Adult Account");
+		}
+		else
+			System.out.println("Sorry, Age must be greater than 12 to register as an adult");
+	}
+
+	
+	public void requestBook() {
+		
+		String fiction=" ";
+		System.out.println("Enter booktype:");
+		bookType=s1.next();
+		
+		if(bookType.equals("fiction"))
+		{
+			System.out.println("Book Issued successfully, please return the book within 7 days");
+		}
+		else
+			System.out.println("Oops, you are allowed to take only adult Fiction books");
+	}
+
+}
+public class LibraryInterfaceDemo
+{
+
+	public static void main(String[] args)
+	{
+		KidUsers k=new KidUsers();
+		k.registerAccount();
+		k.requestBook();
+		
+		AdultUser a=new AdultUser();
+		a.registerAccount();
+		a.requestBook();
+	}
+
+}
