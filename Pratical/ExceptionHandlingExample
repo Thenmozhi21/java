@@ -1,0 +1,46 @@
+public class ExceptionhandlingEx {
+
+	public static void show()
+	{
+		
+		try
+		{
+			int i=50/1;//ArithmeticException
+			System.out.println(i);
+			
+			String a1=null;//NullpointerException
+			System.out.println(a1.length());
+			
+		int	arr[]=new int[3];
+		arr[4]=34;//ArrayIndexOutOfBoundsException
+			
+			
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println(e);
+		}
+		catch(NullPointerException e)
+		{
+			System.out.println(e);
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println(e);
+		}
+		finally {
+			System.out.println("hi im finally block");
+		}
+		String b="i cannot be handle";
+		System.out.println(b);
+	}
+
+	public static void main(String[] args)
+	{
+		
+		show();
+		
+
+	}
+
+}
