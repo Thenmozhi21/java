@@ -1,0 +1,22 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexExample {
+
+	public static void main(String[] args) {
+		
+		Pattern p=Pattern.compile(".am");
+		
+        Matcher m=p.matcher("1am");
+        boolean b=m.matches();
+        //or
+        boolean bb=Pattern.compile(".a").matcher("aa").matches();
+        //or
+        boolean b1=Pattern.matches(".am", "nam");
+        boolean b2=Pattern.matches("[6-9]{1}[0-9]{9}","6365217521");//mobile number
+        boolean b3=Pattern.matches("^[a-z0-9+-._]*+@[a-zA-Z0-9]*+\\.[a-z]{3}","thenmozhi.v2110@gmail.com");//email Id 
+        boolean b4=Pattern.matches("^[a-zA-Z0-9+._-]*{8,}","thenmozhi2110");//password
+        System.out.println(b+" "+bb+" "+b1+" "+b2+" "+b3+" "+b4);
+	}
+
+}
