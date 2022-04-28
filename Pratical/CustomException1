@@ -1,0 +1,38 @@
+public class LanguageCheckException extends Exception
+{
+
+	public LanguageCheckException(String str)
+	{
+		super(str);
+	}
+}
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class CustomExceptionExample
+{
+	ArrayList<String> languages =new ArrayList<String>(Arrays.asList("tamil","english","marathi","telugu"));
+	 
+	public void check(String language)throws LanguageCheckException
+	{
+		if(languages.contains(language))
+		{
+			throw new LanguageCheckException("Language already exits in list");
+			
+		}
+		else
+			languages.add(language);
+		System.out.println(language+" Language added in the list");
+		
+	}
+
+	public static void main(String[] args) throws LanguageCheckException
+	{
+		
+
+		 CustomExceptionExample c=new  CustomExceptionExample();
+		 c.check("hindi");
+		 c.check("english");
+	}
+
+}
