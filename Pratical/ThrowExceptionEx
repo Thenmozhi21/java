@@ -1,0 +1,21 @@
+public class ThrowExceptionEx
+{
+	public static void myDisplay(int a)
+	{
+		if(a>=0&&a<35)
+		{
+			throw new ArithmeticException("value is less then 35");
+			
+		}
+		else
+			System.out.println("your are pass");
+		
+	}
+
+	public static void main(String[] args)
+	{
+		myDisplay(0);
+
+	}
+
+}
