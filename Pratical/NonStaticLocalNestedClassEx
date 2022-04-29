@@ -1,0 +1,28 @@
+
+public class NonStaticLocalNestedEx
+{
+
+	int a=5;
+	private int b=3;
+	
+	public void display()//method creating
+	{
+	class Inner
+	{
+		int res;
+		public void show()
+		{
+			System.out.println("Value of result:"+(a+b));
+		}
+	}
+	Inner i=new Inner();
+	i.show();
+	}
+
+	public static void main(String[] args)
+	{
+		NonStaticLocalNestedEx n=new NonStaticLocalNestedEx();
+		n.display();
+	}
+
+}
