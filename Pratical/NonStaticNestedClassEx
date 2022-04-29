@@ -1,0 +1,23 @@
+public class NonStaticNestedClassEx 
+{
+
+	int a=5;
+	private int b=3;
+	class Inner
+	{
+		int res;
+		public void show()
+		{
+			System.out.println("Value of result:"+(a+b));
+		}
+	}
+
+
+	public static void main(String[] args)
+	{
+		NonStaticNestedClassEx s=new NonStaticNestedClassEx();
+		NonStaticNestedClassEx.Inner i=s.new Inner();
+		i.show();
+	}
+
+}
