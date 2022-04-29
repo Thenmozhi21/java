@@ -1,0 +1,22 @@
+package inner_nestedclass;
+
+public class StaticNestedEx
+{
+	static int a=5;
+	private static int b=3;
+	static class Inner
+	{
+		static int res;
+		public void show()
+		{
+			System.out.println("Value of result:"+(a+b));
+		}
+	}
+
+	public static void main(String[] args) 
+	{
+		StaticNestedEx.Inner s=new StaticNestedEx.Inner();
+        s.show();
+	}
+
+}
