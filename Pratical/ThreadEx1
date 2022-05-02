@@ -1,0 +1,19 @@
+public class ThreadEx1 implements Runnable
+{
+	
+			//perform action for a thread
+		public void run()
+		{
+			System.out.println("Iam thread......thread is using runnable");
+		}
+
+		public static void main(String[] args)
+		{
+			ThreadEx1 th=new ThreadEx1();
+			Thread t=new Thread(th);
+			t.start();
+		}
+
+	}
+
+	
