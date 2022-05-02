@@ -1,0 +1,15 @@
+public class ThreadEx extends Thread
+{
+	//perform action for a thread
+	public void run()
+	{
+		System.out.println("Iam thread......thread is running");
+	}
+
+	public static void main(String[] args)
+	{
+		ThreadEx t=new ThreadEx();
+		t.start();
+	}
+
+}
