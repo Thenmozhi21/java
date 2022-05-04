@@ -1,0 +1,25 @@
+public class DaemonEx extends Thread
+{
+
+	public void run()
+	{
+		if(Thread.currentThread().isDaemon())
+		{
+			System.out.println("iam daemon");
+		}
+		else
+			System.out.println("im user");
+	}
+	public static void main(String[] args)
+	{
+		
+		 DaemonEx t=new  DaemonEx();
+		 DaemonEx t1=new  DaemonEx();
+		 DaemonEx t2=new  DaemonEx();
+		 t.setDaemon(true);//now t1 is daemon
+		 t.start();
+		 t1.start();
+		 t2.start();
+	}
+
+}
