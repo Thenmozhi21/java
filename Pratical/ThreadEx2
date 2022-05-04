@@ -1,0 +1,35 @@
+public class ThreadEx2 extends Thread {
+	public void run()
+	{
+		for(int i=1;i<=3;i++)
+		{
+			try
+		   {
+				Thread.sleep(200);
+	    	}
+		catch(InterruptedException e)
+		{
+					System.out.println(e);
+		}
+		System.out.println(i);
+		}
+		System.out.println(Thread.currentThread().getName());
+		System.out.println(Thread.currentThread().getPriority());
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ThreadEx2 t=new ThreadEx2();
+		ThreadEx2 t1=new ThreadEx2();
+		ThreadEx2 t2=new ThreadEx2();
+		t2.setPriority(MAX_PRIORITY);
+		System.out.println(t2.getPriority());
+		t.start();
+		t1.start();
+		t2.start();
+		
+		t1.setName("Thread hello");
+	}
+
+}
