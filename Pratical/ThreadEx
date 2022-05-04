@@ -10,6 +10,8 @@ public class ThreadEx extends Thread
 	{
 		ThreadEx t=new ThreadEx();
 		t.start();
+		String s=t.getName(); //getting the thread name by invoking getNmae()
+		System.out.println(s);
 	}
 
 }
