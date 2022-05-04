@@ -1,0 +1,82 @@
+1. Write a program in Java of Swapping of two numbers using third variable and without
+third variable.
+public class SwappingTwoNoWithoutTemp 
+{
+	public static void main(String[] args) 
+	{
+		int a=10;
+		int b=20;
+		System.out.println("Before Swapping"+"A:"+a+" B:"+b);
+		a=a+b;
+		b=a-b;
+		a=a-b;
+		System.out.println("Before Swapping"+"A:"+a+" B:"+b);
+       }
+}
+public class SwappingWithTemp 
+{
+public static void main(String[] args)
+	{
+		int a=2;
+		int b=3;
+		int temp;
+		System.out.println("Before Swapping"+"A:"+a+" B:"+b);
+		temp=a;
+		a=b;
+		b=temp;
+		System.out.println("Before Swapping"+"A:"+a+" B:"+b);
+        }
+}
+ 
+ 
+2. Write a program in Java of Program with Logical AND, OR, NOT Operator.
+public class LogicalOperatorEx 
+{
+      public static void main(String[] args)
+	{
+        //AND Operator
+	 int a = 10, b = 20, c = 20, d = 0;
+        System.out.println("Var1 = " + a);
+        System.out.println("Var2 = " + b);
+        System.out.println("Var3 = " + c);
+        if ((a < b) && (b == c)) {
+            d = a + b + c;
+            System.out.println("The sum is: " + d);
+        }
+        else
+            System.out.println("False conditions");
+        //OR Operator
+        int e = 10, f = 1, g = 10, h = 30;
+        System.out.println("Var1 = " + e);
+        System.out.println("Var2 = " + f);
+        System.out.println("Var3 = " + g);
+        System.out.println("Var4 = " + h);
+        if (e > f || g == h)
+            System.out.println("One or both :"+" the conditions are true");
+        else
+            System.out.println("Both the"+ " conditions are false");
+        //NOT Operator
+        int l = 10, m = 1;
+        System.out.println("Var1 = " + l);
+        System.out.println("Var2 = " + m);
+        System.out.println("!(l < m) = " + !(l < m));
+        System.out.println("!(l > m) = " + !(l > m));
+    }
+}
+ 
+
+3. Write a program in Java of Print ASCII Value in Java: Assigning a Variable to the int Variable and Using Type-Casting
+public class ASCIIValueEx 
+{
+      public static void main(String[] args) 
+	{
+		char ch='a';
+		int ascii=ch;
+		int castAscii=(int)ch;
+		System.out.println("the ASCII value of "+ ch+" is:"+ascii);
+		System.out.println("the ASCII value of "+ ch+" is:"+castAscii);
+	}
+}
+ 
+
+
