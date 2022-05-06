@@ -1,0 +1,22 @@
+import java.io.FileOutputStream;
+
+public class FileOutputStreamEx 
+{
+
+	public static void main(String[] args) 
+	{
+		try {
+			FileOutputStream f=new FileOutputStream("D:\\ApowerREC\\hello.txt ");
+			//f.write(121);//writing byte
+			String s="welcome home";
+			byte b[]=s.getBytes();
+			f.write(b);
+			f.close();
+			System.out.println("done");
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
