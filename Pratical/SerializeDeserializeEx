@@ -1,0 +1,61 @@
+import java.io.Serializable;
+
+
+public class Strudent implements Serializable
+{
+ int id;
+ String name;
+ transient int fees;
+ 
+ public Strudent(int id,String name,int fees)
+ {
+	 this.id=id;
+	 this.name=name;
+	 this.fees=fees;
+	 
+ }
+ 
+}
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+public class ObjectOutputEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		try {
+			
+			Strudent s=new Strudent(101,"then",4654);
+			FileOutputStream fout=new 	FileOutputStream("D:\\ab.txt");
+			ObjectOutputStream obj=new ObjectOutputStream(fout);
+			obj.writeObject(s);
+			obj.close();
+			System.out.println("done");
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+public class ObjectInputEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		try {
+			ObjectInputStream oi=new ObjectInputStream(new FileInputStream("D:\\ab.txt"));
+			Strudent s=(Strudent)oi.readObject();
+			System.out.println("id is :  "+ s.id+"   name is:  "+  s.name +"   fees is:  "+ s.fees);
+			oi.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
