@@ -1,0 +1,20 @@
+import java.io.FileWriter;
+
+public class FileWriterEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		try {
+		FileWriter fw= new FileWriter("D:\\test1.txt");
+			fw.write("WELCOME TO ANUDIP FOUNDATION");
+		
+			fw.close();
+			System.out.println("done");
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		
+		}
+	}
