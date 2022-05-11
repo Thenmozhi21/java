@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//creating Arraylist
+		List<String> al = new ArrayList<String>();
+		
+		//adding objects to arrasylist
+		al.add("rose");
+		al.add("lily");
+		al.add("sunflower");
+		al.add("jasmine");
+		al.add(2, "lotus");
+		al.add("lily");
+		al.add(4, "daisy");
+		al.add(6," tulip");
+		al.add("orchid");
+		al.add(9,"lavender");
+		
+		//printing arraylist objects
+		System.out.println(al);
+		System.out.println("Size of the array list :"+al.size());
+		 
+		//removing elements at index 5
+		al.remove(5);
+		//after removing printing arraylist objects
+		System.out.println(al);
+		System.out.println("Size of the array list :"+al.size());
+		
+		//adding elements in arraylist
+		al.add("jasmine");
+		System.out.println(al);
+		System.out.println("Size of the array list :"+al.size());
+		 //using get method
+		System.out.println("element of index value is: "+al.get(2));
+				 
+				
+	}
+
+}
