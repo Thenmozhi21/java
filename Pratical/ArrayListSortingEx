@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ArrayListSortingEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+List<String> al = new ArrayList<String>();
+		
+		al.add("rose");
+		al.add("lily");
+		al.add("sunflower");
+		al.add("jasmine");
+		al.add( "lotus");
+		al.add("lily");
+		al.add("daisy");
+		System.out.println("String sorted list:");
+		//sorting al
+		Collections.sort(al);
+		for(String a:al)
+		{
+			System.out.println(a);
+		}
+		
+List<Integer> al1= new ArrayList<Integer>();
+		
+		al1.add(20);
+		al1.add(80);
+		al1.add(79);
+		al1.add(45);
+		al1.add( 2);
+		al1.add(6);
+		al1.add(24);
+		System.out.println("String sorted list:");
+		//sorting al1
+		Collections.sort(al1);
+		for(Integer i:al1)
+		{
+			System.out.println(i);
+		}
+		//Sorting al1 in descending
+		Collections.reverse(al1);
+		System.out.println(al1);
+	}
+
+}
