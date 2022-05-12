@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+
+
+public class TraversingEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+List<String> al = new ArrayList<String>();
+		
+		
+		al.add("rose");
+		al.add("lily");
+		al.add("sunflower");
+		al.add("jasmine");
+		al.add( "lotus");
+		al.add("lily");
+		al.add("daisy");
+		al.add("rose");
+		al.add("lotus");
+		
+		System.out.println("Traversing using for loop");
+		for(int i=0;i<=al.size();i++)
+		{
+			System.out.println(al.get(i));
+		}
+		
+	     System.out.println("Traversing using for_each loop");
+	        for(String i: al)
+         	{
+	       	System.out.println(i);
+	     	}
+		
+	 	  System.out.println("Traversing using Interator");
+             Iterator<String> itr = al.iterator();//getting the iterator
+	           while(itr.hasNext())//checking iterator has elements
+		      {
+		       System.out.println(itr.next());//printing elements & move to next
+		      }
+	    	System.out.println("Traversing using List Interator-forward");
+	           ListIterator<String> itr1 = al.listIterator();//getting the iterator
+		         while(itr1.hasNext())//checking iterator has elements
+		         {
+		            System.out.println(itr1.next());//printing elements & move to next
+			     }
+			 System.out.println("Traversing using List Interator-backward");
+		           ListIterator<String> it = al.listIterator();//getting the iterator
+				     while(it.hasPrevious())//checking iterator has elements
+				     {
+					     System.out.println(it.previous());//printing elements & move to next
+					  }
+	}
+
+}
