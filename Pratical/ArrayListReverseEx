@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ArrayListReverseEx {
+
+	public static void main(String[] args) {
+		
+List<String> al = new ArrayList<String>();
+		
+		
+		al.add("rose");
+		al.add("lily");
+		al.add("sunflower");
+		al.add("jasmine");
+		al.add("lotus");
+		al.add("lily");
+		al.add( "daisy");
+		System.out.println("Before reversing");
+		System.out.println(al.toString());
+		Collections.reverse(al);
+		System.out.println("After reversing");
+		System.out.println(al);
+	}
+
+}
