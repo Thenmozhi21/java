@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListCompareEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+List<String> al = new ArrayList<String>();
+		
+		
+		al.add("rose");
+		al.add("lily");
+		al.add("sunflower");
+		al.add("jasmine");
+		al.add( "lotus");
+		al.add("lily");
+		al.add("daisy");
+		System.out.println(al);
+		
+List<String> al1 = new ArrayList<String>();
+		
+		
+		al1.add("rose");
+		al1.add("lily");
+		al1.add("sunflower");
+		al1.add("jasmine");
+		al1.add( "lotus");
+		al1.add("lily");
+		al1.add( "daisy");
+		System.out.println(al1);
+		
+		boolean b=al.equals(al1);
+		System.out.println(b);
+		
+		al1.add("dairy");
+		boolean b1=al.equals(al1);
+		System.out.println(b1);
+	}
+
+}
