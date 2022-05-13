@@ -1,0 +1,48 @@
+import java.util.EmptyStackException;
+import java.util.Stack;
+
+public class StackEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Stack<Integer> st= new Stack<Integer>();
+		
+		//Checking Stack is empty or not
+		boolean b= st.empty();
+		System.out.println(b);
+		// throws exception 
+		try 
+		{
+			st.pop();
+		}
+		catch(EmptyStackException e)
+		{
+		System.out.println("empty stack" +e);
+		}
+		// adding elements in stack
+		st.push(67);
+		st.push(98);
+		st.push(23);
+		st.push(12);
+		st.push(34);
+		// printing stack
+		System.out.println(st);
+		//Checking Stack is empty or not
+		boolean b1=st.empty();
+		System.out.println(b1);
+		// adding elements in existing stack
+		st.push(20);
+		System.out.println(st);
+		// fetch top element of stack
+		Integer i = st.peek();
+		System.out.println("Top element:"+  i);
+		// remove element from stack
+		st.pop();
+		System.out.println(st);
+		   
+		int j = st.search(98);
+		System.out.println("position is :"+ j);
+	}
+
+}
