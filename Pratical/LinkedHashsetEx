@@ -1,0 +1,36 @@
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class LinkedHashsetEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+
+		Set<String> s= new HashSet<String>();
+		s.add("pen");
+		s.add("pencil");
+		s.add("mouse");
+		s.add("bottle");
+		s.add("earphone");
+		s.add(null);
+		s.add("Ac");
+		s.add("Phone");
+		s.add(null);
+		s.add("pen");//duplicate not allowed
+		
+		Iterator<String> itr = s.iterator();
+		while(itr.hasNext())
+		{
+			System.out.println(itr.next());
+		}
+		s.remove("Ac");
+		System.out.println(s);
+	}
+
+
+
+	}
+
+
