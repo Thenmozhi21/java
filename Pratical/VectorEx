@@ -1,0 +1,24 @@
+import java.util.Vector;
+
+public class VectorEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Vector<String> vc= new Vector<String>();
+		vc.add("Dog");
+		vc.add("Cat");
+		vc.add("Lion");
+		vc.add(0,"Tiger");
+		
+		System.out.println(vc);
+		
+		if(vc.contains("Cat"))
+		{
+			System.out.println("element present");
+		}
+		else
+			System.out.println("not present");
+	}
+
+}
