@@ -1,0 +1,35 @@
+import java.util.Iterator;
+import java.util.PriorityQueue;
+
+public class PriorityQueueEx {
+
+	public static void main(String[] args) {
+		
+		PriorityQueue<String> qu = new PriorityQueue<String>();
+		
+		qu.add("Velu");
+		qu.add("Premila");
+	    qu.add("Thenmozhi");
+	    qu.add("Pradeep");
+		qu.add("Inba");
+	    qu.add("Catherine");
+	    
+	 	System.out.println("Peek element is :" + qu.peek());
+	 	System.out.println(" ");
+		Iterator<String> itr = qu.iterator();
+		while(itr.hasNext())
+		{
+			System.out.println(itr.next());
+		}
+		 System.out.println(" ");
+		qu.remove();
+		System.out.println("queue after removing an element : ");
+	    System.out.println(" ");
+		Iterator<String> itr1 = qu.iterator();
+		while(itr1.hasNext())
+		{
+			System.out.println(itr1.next());
+		}
+	}
+	
+}
