@@ -1,0 +1,44 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class ArrayDequeueEx {
+
+	public static void main(String[] args) {
+		
+		Deque<String> dqu = new  ArrayDeque<String>();
+		
+		dqu.add("Velu");
+		dqu.add("Premila");
+	    dqu.add("Thenmozhi");
+	    dqu.add("Pradeep");
+		dqu.add("Inba");
+		dqu.add("Krishnaveni");
+	    dqu.add("Catherine");
+	    
+	    for(String s : dqu)
+	    {
+	    	System.out.println(s);
+	    }
+	    
+	    dqu.addFirst("Aishwariya");// adding from front side
+	    dqu.addLast("Riya");//adding from back side
+	    
+	    System.out.println("New List: ");
+	    for(String s : dqu)
+	    {
+	    	System.out.println(s);
+	    }
+	    
+	    dqu.removeFirst();// removing from front side
+	    dqu.removeLast();// removing from back side
+	    
+	    System.out.println(" New List after removal :");
+	    for(String s : dqu)
+	    {
+	    	System.out.println(s);
+	    }
+	    
+
+	}
+
+}
