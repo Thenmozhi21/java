@@ -1,0 +1,25 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapEx {
+
+	public static void main(String[] args) {
+		
+		HashMap<Integer , String> map = new HashMap<Integer , String>();
+		map.put(101, "Mango");
+		map.put(102, "Orange");
+		map.put(103, "Apple");
+		map.put(104, "Banana");
+		map.put(102, "Orange");//duplicate entry
+		map.put(null, null);// null entry
+		map.put(108, null);// null value
+		//map.put(null, "Grape"); only one null key & null value can be multiple
+		
+		for(Map.Entry m : map.entrySet())
+		{
+			System.out.println(m.getKey() +  " " + m.getValue());
+		}
+		
+	}
+
+}
