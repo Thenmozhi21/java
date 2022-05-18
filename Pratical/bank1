@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+
+
+
+public class ArrayListUsingUserdefineclassEx {
+
+	public static void main(String[] args) {
+		
+
+		//creating user define class object
+		Bank b=new Bank(1234,"honey",467.65,20);
+		Bank b1=new Bank(1234,"john",468.65,21);
+		Bank b2=new Bank(1234,"ram",469.65,22);
+		Bank b3=new Bank(1234,"pradeep",461.65,23);
+		Bank b4=new Bank(1234,"sam",462.65,24);
+		
+		//creating arraylist
+		ArrayList<Bank> al=new ArrayList<>();
+		al.add(b4);
+		al.add(b3);
+		al.add(b);
+		al.add(b2);
+		al.add(b1);
+		
+		Iterator itr=al.iterator();
+	//while(itr.hasNext())
+	//{
+	//	Bank obj=(Bank) itr.next();
+	//	System.out.println(obj.accountNo+" "+obj.customerName+" "+obj.customerAge+" "+obj.balance);
+	//	}
+	
+	Collections.sort(al);
+	for(Bank  ba : al)
+	{
+		System.out.println(ba.accountNo + " " + ba.customerName + " " + ba.customerAge + " " + ba.balance);
+	}
+	
+		
+	}
+
+}
