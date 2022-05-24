@@ -1,0 +1,15 @@
+package assignment;
+
+public class StringJump {
+
+	public static void main(String[] args)
+	{
+	
+		 String str = "i like blue colour and balck colour";
+
+	        String new_str = str.substring(10, 26);
+            System.out.println("old = " + str);
+	        System.out.println("new = " + new_str);
+	}
+
+}
