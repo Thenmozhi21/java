@@ -1,0 +1,22 @@
+package java;
+
+import java.util.Optional; 
+public class OptionalClassEx {
+
+	public static void main(String[] args) {
+		
+
+		String[]str=new String[5];
+		str[3]="anudip";  //value of index 3
+		Optional<String>c=Optional.ofNullable(str[3]);
+		if(c.isPresent()){  //check for value present
+		String l=str[3].toUpperCase();
+		System.out.println(l);
+		}
+		else{
+		System.out.println("Value not there");
+		}
+		
+		}
+
+}
