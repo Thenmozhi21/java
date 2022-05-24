@@ -1,0 +1,21 @@
+package assignment;
+
+public class StringEx1 {
+
+	public static void main(String[] args) {
+		
+		   String c1 = "Stephen Edwin King";
+	        String c2 = "Walter Winchell";
+	        String c3 = "stephen edwin king";
+	        String c4 = "Stephen Edwin King";
+	        
+	        boolean e1 = c1.equalsIgnoreCase(c2);
+	        boolean e2 = c1.equalsIgnoreCase(c3);
+	        boolean e3= c1.equals(c4);
+	     
+	        System.out.println("\"" + c1 + "\" equals \"" +c2 + "\"? " + e1);
+	        System.out.println("\"" + c1 + "\" equals \"" + c3 + "\"? " + e2);
+	        System.out.println("\"" + c1 + "\" equals \"" +c4 + "\"? " + e3);
+	}
+
+}
