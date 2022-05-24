@@ -1,0 +1,21 @@
+package java;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ForEachEx {
+
+	public static void main(String[] args) {
+		
+		List<String> flower=new ArrayList<String>();
+		flower.add("Rose");
+		flower.add("Jasmine");
+		flower.add("Sunflower");
+		flower.add("Marigold");
+		flower.add("Lilly");
+		flower.forEach(display->System.out.println(display));//iterating with lambda expression
+		flower.forEach(System.out::println); //iterating with method refernece
+
+	}
+
+}
