@@ -1,0 +1,21 @@
+package java;
+
+public class MethodReferenceEx {
+
+     public void display(String a)
+     {
+			System.out.println("Hello..I am "+a);
+			}
+			public static void main(String[] args)
+			{
+			MethodReferenceEx m=new MethodReferenceEx();
+
+			Sample s=m::display; //referring method using reference
+
+			s.display("Mamta"); //calling intetface method
+			
+			
+
+	}
+
+}
