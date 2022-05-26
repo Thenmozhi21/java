@@ -1,0 +1,23 @@
+public class StringEx2 
+{
+	public static void display() 
+	{
+		StringBuffer s = new StringBuffer("Good Morning");
+		StringBuffer s1= new StringBuffer("Buffer");
+		s.append(" This is a sample program");
+		System.out.println("String is :" + s);
+		s.insert(21, 'o');
+		System.out.println("Insert is :" + s );
+		s.reverse();
+		System.out.println("Reverse is :" + s);
+		s1.replace(0, 6,"Builder");
+		System.out.println("Replace is :" + s1);
+	}
+
+	public static void main(String[] args)
+	{
+		
+       display();
+	}
+
+}
