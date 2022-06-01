@@ -1,0 +1,44 @@
+use my;
+create table CUSTOMER
+(
+ Cust_id int(5),
+ Fname varchar (15),
+ Lname varchar (15),
+ Area char (2),
+ Phone bigint (10),
+ DOB date,
+ Payment float(6,4)
+ );
+ 
+insert into CUSTOMER values
+ (01,'Ivan','Ross','SA',612546,'1986-1-15',6.3);
+ insert into CUSTOMER values
+ (02,'Vandana','Ray','MU',612547,'1987-12-20',7.5);
+ insert into CUSTOMER values
+ (03,'Pramada','Jauguste','DA',612548,'1967-7-25',50.0);
+ insert into CUSTOMER values
+ (04,'Basu','Navindini','BA',612549,'1956-2-29',86.0),
+ (01,'Ravi','Krishnan','DU',612550,'1986-5-15',90.5);
+ insert into CUSTOMER values
+ (06,'krishnan','kumar','NA',null,'1989-2-15',92.2);
+ 
+ update CUSTOMER set Phone=435466 where Cust_id=02;
+ update CUSTOMER set Phone=874363 where Cust_id=04;
+
+update CUSTOMER set DOB='1292-5-25' where Cust_id=03;
+update CUSTOMER set DOB='2000-5-25' where Cust_id=05;
+
+delete from CUSTOMER where Cust_id=01;
+delete from CUSTOMER where Cust_id=05;
+
+delete from CUSTOMER;
+
+insert into CUSTOMER values
+(1,'arun','kumar','DA',26325,'2000-5-12',21.3),
+(2,'sophia','david','MU',36525,'2001-5-5',19.3),
+(3,'thenmozhi','velu','MU',76325,'2000-9-4',30.3),
+(4,'sonia','vignesh','KR',96325,'2002-5-12',21.3),
+(5,'arun','kumar','MU',26325,'2000-5-12',21.3);
+ 
+ update  CUSTOMER set Lname='prakash' where Cust_id=4;
+ delete from CUSTOMER where Cust_id=5;
