@@ -29,8 +29,11 @@ SELECT *from EMPLOYEE where DEPARTMENT_ID=60;
 #Display the employee details of the employee who’s last_name is King
 SELECT * from EMPLOYEE where LAST_NAME ="king";
 # Display unique job_id from EMPLOYEE table. Give alias name to the column as JOB_TITLE.
- SELECT DISTINCT JOB_ID FROM EMPLOYEE;
+ SELECT distinct job_id as JOB_TITLE from EMPLOYEE ;
  # Display last_name, salary and salary increase of Rs300. Give the new column name as ‘Increased Salary’.
+ select LAST_NAME,SALARY,SALARY+300 as 'INCREASED_SALARY' from EMPLOYEE;
+ #Display last_name, salary and annual compensation of all employees ,plus a one time bonus of RS 100 Give the alias name to the column displaying annual compensation
+ select LAST_NAME,SALARY,SALARY+COMM_PCT+100 as 'ANNUAL_COMPENSATION' from EMPLOYEE;
  #Display the details of those employees who get commission
  select *from EMPLOYEE where COMM_PCT !="null";
  #Display the details of those employees who do not get commission
