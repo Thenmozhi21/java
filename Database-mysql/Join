@@ -1,0 +1,24 @@
+use my1;
+
+#INNER JOIN
+select customer.customername,orders.orderdate from customer inner join orders ON
+ customer.customerid=orders.customerid;
+ 
+ #or
+ select customername,orderdate from customer inner join orders ON
+ customer.customerid=orders.customerid;
+ 
+ #or
+ select c.customername,o.orderdate from customer c , orders o where
+ c.customerid=o.customerid;
+ 
+ #LEFT OUTER JOIN
+ 
+ select customername,orderdate from customer left join orders ON
+ customer.customerid=orders.customerid;
+ 
+ #RIGHT UOTER JOIN
+ 
+ select customername,orderdate from customer right join orders ON
+ customer.customerid=orders.customerid;
+ 
