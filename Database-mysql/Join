@@ -22,3 +22,12 @@ select customer.customername,orders.orderdate from customer inner join orders ON
  select customername,orderdate from customer right join orders ON
  customer.customerid=orders.customerid;
  
+#FOREIGN KEY ALTER
+ alter table orders ADD FOREIGN KEY (customerid) references customer(customerid);
+ 
+ #CROSS join
+ select * from customer cross join orders;
+ 
+ #SELF JOIN
+ select S1.ename,S1.dept from emp S1 inner join emp S2 on S1.dept=S2.dept 
+ AND S1.emp_id<>S2.emp_id order by S1.emp_id;
