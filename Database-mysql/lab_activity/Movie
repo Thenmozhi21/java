@@ -1,0 +1,18 @@
+use lab;
+
+select Title from movie where Price >100 AND price <200;
+select c.Cust_id from customer c inner join movie m ON c.Cust_id = m.Cust_id where Star='JC'or Star='MC'or Star='TC';
+select * from customer where Area like '%A%' ;
+select Title from movie where Price <=180 AND Title like '______';
+select Title,Price,Price*1.1 as 'Incremented price column' from movie;
+select Fname,Lname,Area,Phone from customer;
+alter table customer MODIFY Lname varchar(45) not null;
+select Fname,Lname from customer where phone is null;
+update customer set phone = 98765 where phone is null;
+select distinct Cust_id from movie;
+alter table movie MODIFY Star varchar(45) ;
+delete from customer where Cust_id='A03';
+delete from movie where Cust_id='A02';
+DROP TABLE customer;
+DROP TABLE movie;
+ALTER table customer DROP CONSTRAINT fk_Cust_id;
