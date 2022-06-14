@@ -1,0 +1,40 @@
+package maven;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class DeleteEx {
+
+	public static void main(String[] args) {
+
+        try
+        {
+        	Class.forName("com.mysql.jdbc.Driver");
+        	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my1","root","thenmozhi2110");
+        	Statement stmt = con.createStatement();
+        	
+        	// delete record
+        //	stmt.executeUpdate("delete from customer where customerid = '5' ");
+        	
+        //    System.out.println("deleted successfully");
+        //	con.close();
+        	
+        	//execute query ,fetch data from db table
+			ResultSet rs = stmt.executeQuery("Select * from customer order by customername");
+			
+			//iteration
+			while(rs.next())
+				System.out.println("Customer id : "+ rs.getInt(1)+"Customer name : "+ rs.getString(2));
+			
+			//close mysql db connection
+			con.close();
+        }
+        catch(Exception e)
+        {
+        	System.out.println(e);
+        }
+	}
+
+}
