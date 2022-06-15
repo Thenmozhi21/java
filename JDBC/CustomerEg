@@ -1,0 +1,63 @@
+package comm.Maven;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class CustomerEg
+{
+Scanner s= new Scanner(System.in);
+int id;
+String customername, customerphone;
+
+//saving customer -- INSERT
+public void saveCustomer( )throws SQLException {
+	System.out.println("Enter customer id ");
+	id=s.nextInt();
+	System.out.println("Enter customer name ");
+	customername = s.next();
+	System.out.println("Enter customer phone ");
+	customerphone = s.next();
+	Connection conn = Helpher.con();
+	//Statement st = conn.createStatement();
+	//st.executeUpdate("insert into customer values (" + id + "," + customername + ","+ customerphone ));
+	PreparedStatement st = conn.prepareStatement(" insert into customer values(?,?,?)");
+	st.setInt(1, id);
+	st.setString(2, customername);
+	st.setString(3, customerphone);
+	st.executeUpdate();
+}
+//read customer -- SELECT
+public void fetchCustomer( )throws SQLException {
+	Connection conn = Helpher.con();
+	Statement st = conn.createStatement();
+	ResultSet rs = st.executeQuery("Select * from customer");
+	while(rs.next())
+	{
+		System.out.println(rs.getInt(1) + " "+ rs.getString(2) +" "+ rs.getString(3));
+		
+	}
+}
+//modify customer -- UPDATE
+public void updateCustomer() throws SQLException {
+Connection conn = Helpher.con();
+Statement st = conn.createStatement();
+System.out.println("Enter customer id :");
+id = s.nextInt();
+System.out.println("Enter update customer phone");
+customerphone = s.next();
+st.executeUpdate("update customer_table set customerphone = '"+ customerphone+"'where customerid = "+ id);
+}
+//remove customer -- DELETE
+public void deleteCustomer( )throws SQLException {
+	Connection conn = Helpher.con();
+	Statement st = conn.createStatement();
+	System.out.println("Enter customer id ");
+	id = s.nextInt();
+	st.executeUpdate("Delete from customer where customerid =" +id);
+	
+}
+}
