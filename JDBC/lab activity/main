@@ -1,0 +1,46 @@
+package comm.Maven;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class TestMain {
+
+	public static void main(String[] args) throws SQLException
+	{
+		
+
+		Employee c = new Employee();
+		Scanner s= new Scanner(System.in);
+		int ch;
+		do
+		{
+			System.out.println("1. INSERT \n 2. DISPLAY \n 3. UPDATE \n 4. DELETE \n 5. EXIT");
+			System.out.println("Enter your choice from 1-5 ");
+			ch= Integer.parseInt(s.nextLine());
+			System.out.println("----------------------------");
+			
+			switch(ch) {
+			case 1:
+				c.saveEmployee();
+				break;
+			case 2:
+				c.fetchEmployee();
+				break;
+			case 3:
+				c.updateEmployee();
+				break;
+			case 4:
+				c.deleteEmployee();
+				break;
+			case 5:
+				System.exit(0);
+				break;
+			}
+		}
+	
+			while(ch!=5);
+			
+		
+	}
+
+}
