@@ -1,0 +1,66 @@
+package comm.Maven;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Employee 
+{
+
+	Scanner s= new Scanner(System.in);
+	int id;
+	String Employeename;
+	int Employeephone;
+
+	//saving Employee -- INSERT
+	public void saveEmployee( )throws SQLException {
+		System.out.println("Enter Employee id ");
+		id=s.nextInt();
+		System.out.println("Enter Employee name ");
+		Employeename = s.next();
+		System.out.println("Enter Employee phone ");
+		Employeephone = s.nextInt();
+		Connection conn = Helper1.con();
+		
+		PreparedStatement st = conn.prepareStatement(" insert into Employee values(?,?,?)");
+		st.setInt(1, id);
+		st.setString(2, Employeename);
+		st.setLong(3, Employeephone);
+		st.executeUpdate();
+	}
+	//read Employee-- SELECT
+	public void fetchEmployee( )throws SQLException {
+		Connection conn = Helper1.con();
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery("Select * from Employee");
+		while(rs.next())
+		{
+			System.out.println(rs.getInt(1) + " "+ rs.getString(2) +" "+ rs.getInt(3));
+			
+		}
+	}
+	//modify Employee -- UPDATE
+	public void updateEmployee() throws SQLException {
+	Connection conn = Helper1.con();
+	Statement st = conn.createStatement();
+	System.out.println("Enter Employee id :");
+	id = s.nextInt();
+	System.out.println("Enter update Employee phone");
+	Employeephone = s.nextInt();
+	st.executeUpdate("update Employee_table set Employeephone = '"+ Employeephone+"'where Employeeid = "+ id);
+	}
+	//remove Employee -- DELETE
+	public void deleteEmployee( )throws SQLException {
+		Connection conn = Helper1.con();
+		Statement st = conn.createStatement();
+		System.out.println("Enter Employee id ");
+		id = s.nextInt();
+		st.executeUpdate("Delete from Employee where Employeeid =" +id);
+		
+	}
+	
+
+}
