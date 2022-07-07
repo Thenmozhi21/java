@@ -1,0 +1,83 @@
+package com.DaoImpl;
+
+
+	import java.util.Scanner;
+	import org.hibernate.Session;
+	import org.hibernate.Transaction;
+	import com.HibernateUtil;
+	import com.Dao.UserDao;
+	import com.Entity.User;
+
+	public class UserDaoImpl implements UserDao
+	{
+		
+		public void addUser()
+		{
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction t = session.beginTransaction();
+		long user_id;
+		String fn,ln,em;
+		int ag;
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter User Id :");
+		user_id = s.nextLong();
+		System.out.println("Enter User's FirstName :");
+		fn = s.next();
+		System.out.println("Enter User's LastName :");
+		ln = s.next();
+		System.out.println("Enter User's Email :");
+		em = s.next();
+		System.out.println("Enter User's Age :");
+		ag = s.nextInt();
+		User u = new User();
+		u.setId(user_id);
+		u.setFirstName(fn);
+		u.setLastName(ln);
+		u.setEmail(em);
+		u.setAge(ag);
+		session.save(u);
+		t.commit();
+		System.out.println("User record inserted successfully");
+		session.close();
+		}
+		public void readUser() {
+		Session session = HibernateUtil.getSessionFactory().openSession();	
+		long i;
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter User Id :");
+		i = s.nextLong();
+		User w = session.get(User.class,i);
+		System.out.println("User Id :"+w.getId()+"User FirstName :"+w.getFirstName()+"User LastName :"
+		+w.getLastName()+"User Email :"+w.getEmail()+"User Age :"+w.getAge());	
+		session.close();
+		}
+		public void updateUser() {	
+		Session session = HibernateUtil.getSessionFactory().openSession();		
+		Scanner s = new Scanner(System.in);
+		Transaction t = session.beginTransaction();
+		System.out.println("Enter User Id :");
+		long j = s.nextLong();
+		User w = session.get(User.class,j);
+		System.out.println("Enter your UpdatedEmail :");
+		String eml = s.next();
+		w.setEmail(eml);
+		session.update(w);
+		t.commit();
+		System.out.println("Updated Successfully");
+		session.close();
+		}
+		public void deleteUser() {
+		Session session = HibernateUtil.getSessionFactory().openSession();		
+		Scanner s = new Scanner(System.in);
+		Transaction t = session.beginTransaction();		
+		System.out.println("Enter User Id :");
+		long k = s.nextLong();
+		User w = session.get(User.class,k);	
+		session.delete(k);
+		t.commit();
+		System.out.println("Deleted Succesfully");
+		session.close();
+		}
+	}
+
+
