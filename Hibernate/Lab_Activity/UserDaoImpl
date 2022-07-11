@@ -1,0 +1,85 @@
+package com.DaoImpl;
+
+
+	import java.util.Scanner;
+	import org.hibernate.Session;
+	import org.hibernate.Transaction;
+	import comm.HibernateUtil;
+	import com.Dao.UserDao;
+	import com.Entity.User;
+
+	public class UserDaoImpl implements UserDao
+	{
+		double balance = 60000;
+		public void WithdrawAmt()
+		{
+		Session session = comm.HibernateUtil.getSessionFactory().openSession();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter AccountNo :");
+		long AccNo = s.nextLong();
+		System.out.println("Enter Amount for Withdrawal");
+		int withdraw =s.nextInt();
+		if (balance >=withdraw)
+		{
+			balance=balance-withdraw;
+			System.out.println("Collect your Amount");
+			System.out.println("Account balance:"+balance);
+		}
+		else
+		{
+			System.out.println("Insufficient balance");
+		}
+		}
+		
+		public void DepositAmt()
+		{
+		Session session = HibernateUtil.getSessionFactory().openSession();	
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter AccountNo :");
+		long AccNo = s.nextLong();
+		System.out.println("Enter money to deposit");
+		long deposit=s.nextLong();
+		balance=balance+deposit;
+		System.out.println("Money is successfully deposited into your account");
+		System.out.println("Account Balance :"+balance);
+		}
+		
+		public void createAccount()
+		{	
+		Session session = HibernateUtil.getSessionFactory().openSession();		
+		Scanner s = new Scanner(System.in);
+		Transaction t = session.beginTransaction();
+		System.out.println("Enter Account number");
+		long AccNo = s.nextLong();
+		System.out.println("Enter FirstName");
+		String FName=s.next();
+		System.out.println("Enter LastName");
+		String LName=s.next();
+		System.out.println("Enter Phone number");
+		long Phone=s.nextLong();
+		System.out.println("Account Balance");
+		long AccBal=s.nextLong();
+		User u= new User();
+		u.setAccountNo(AccNo);
+		u.setFirstName(FName);
+		u.setLastName(LName);
+		u.setPhone(Phone);
+		u.setAccountBalance(AccBal);
+		session.save(u);
+		t.commit();
+		System.out.println("Account record inserted successfully");
+		session.close();
+		}
+		
+		public void checkBalance() 
+		{
+		Session session = HibernateUtil.getSessionFactory().openSession();		
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter AccountNo :");
+		long AccNo = s.nextLong();
+	    System.out.println("Balance :" + balance);
+		
+		}
+
+
+}
