@@ -1,0 +1,38 @@
+package com.Entity;
+
+
+
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+	@Entity
+	@Table(name="Permanent_Emp")
+     @AttributeOverrides({
+    	 @AttributeOverride(name="empId" , column = @Column(name="empId")),
+    	 @AttributeOverride(name="empName" , column = @Column(name="empName")),
+    	 @AttributeOverride(name="empPhone" , column = @Column(name="empPhone")),
+    	 @AttributeOverride(name="empEmail" , column = @Column(name="empEmail"))
+     })
+	public class PermanentEmp extends Employee
+	{
+
+		private float Salary;
+		private int travelAllowance;
+		
+		public float getSalary() {
+			return Salary;
+		}
+		public void setSalary(float salary) {
+			Salary = salary;
+		}
+		public int getTravelAllowance() {
+			return travelAllowance;
+		}
+		public void setTravelAllowance(int travelAllowance) {
+			this.travelAllowance = travelAllowance;
+		}
+		
+}
