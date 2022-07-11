@@ -1,0 +1,49 @@
+package comm;
+
+		import java.util.Scanner;
+
+		import com.DaoImpl.UserDaoImpl;
+
+		public class TestUser 
+		{
+		    public static void main( String[] args )
+		    {
+		    	
+		    	UserDaoImpl um = new UserDaoImpl();
+		    	char ans;
+		    	Scanner s = new Scanner(System.in);
+		    	do {
+		    	System.out.println("-------------Welcome -------------");
+		    	System.out.println("Enter Choice");
+		    	System.out.println(" 1. createAccount \n 2. deposit \n 3. withdraw  \n 4. check \n 5. Exit");
+		       int ch = s.nextInt();
+		       switch (ch) {
+		    	case 1:		    	
+		    		um.createAccount();
+		    	   break;
+		    	case 2:
+		    		um.DepositAmt();
+		    		break;
+		    	case 3:
+		    		um.WithdrawAmt();
+		    		break;
+		    	case 4:
+		    		um.checkBalance();
+		    		break;
+		    	case 5:
+		    		System.exit(0);
+		    		break;
+		    	default:
+		    		System.out.println("Invalid Choice");
+		    		break;
+		    	}
+		    	System.out.println("Do you want to do the process again ? y/n");
+		    	ans=s.next().charAt(0);
+		    	} while (ans=='y'||ans=='Y'); {
+		    	System.out.println("Thank You !");
+		    	}
+		    	}
+		    
+	}
+
+
