@@ -1,0 +1,57 @@
+package com;
+
+import javax.persistence.*;
+
+
+@Table(name="Customer_details")
+@Entity
+public class Customer
+{
+   @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
+   @PrimaryKeyJoinColumn
+   private  long id;
+   
+   @Column(length=30)
+   private String name;
+   
+   @Column(length=20 , unique= true)
+   private String email;
+   
+   @OneToOne(targetEntity = Booking.class, cascade=CascadeType.ALL)
+	 private Booking booking;// has-a relationship, one customer = one booking
+
+public long getId() {
+	return id;
+}
+
+public void setId(int id) {
+	this.id = id;
+}
+
+public String getName() {
+	return name;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+
+public String getEmail() {
+	return email;
+}
+
+public void setEmail(String email) {
+	this.email = email;
+}
+
+public Booking getBooking() {
+	return booking;
+}
+
+public void setBooking(Booking booking) {
+	this.booking = booking;
+}
+
+   
+}
