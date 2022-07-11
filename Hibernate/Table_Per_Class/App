@@ -1,0 +1,49 @@
+package com;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.Entity.ContractEmp;
+import com.Entity.Employee;
+import com.Entity.PermanentEmp;
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	SessionFactory s = new Configuration().configure().buildSessionFactory();
+    	Session session = s.openSession();
+    	Transaction t = session.beginTransaction();
+    	
+    	Employee e= new Employee();
+    	e.setEmpName("Thenmozhi");
+    	e.setEmpPhone(935467153);
+    	e.setEmpEmail("thenmozhi@gmail.com");
+    	
+    	PermanentEmp p = new PermanentEmp();
+    	p.setEmpName("sangeetha");
+    	p.setEmpPhone(832543273);
+    	p.setEmpEmail("sangeetha@gamil.com");
+    	p.setTravelAllowance(15000);
+    	p.setSalary(30000f);
+    	
+    	ContractEmp c =new ContractEmp();
+    	c.setEmpName("Priya");
+    	c.setEmpPhone(935432743);
+    	c.setEmpEmail("priya@gamil.com");
+    	c.setContractPeriod(2);
+    	c.setSalary_per_hour(500f);
+    	
+    	session.save(e);
+    	session.save(c);
+    	session.save(p);
+    	
+    	t.commit();
+    	session.close();
+    	System.out.println("Inserted");
+    
+    }
+}
