@@ -1,0 +1,39 @@
+package comm;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.Booking;
+import com.Customer;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	SessionFactory s = new Configuration().configure().buildSessionFactory();
+    	Session session = s.openSession();
+    	Transaction t = session.beginTransaction();
+    	
+    	Customer c = new Customer();
+    	c.setName("priya");
+    	c.setEmail("priya@gamil.com");
+    	
+    	
+    	Booking b = new Booking();
+    	b.setShowname("XYRE");
+    	b.setTime(12);
+    	b.setSeatnumber(5);
+    	
+    	c.setBooking(b);
+        b.setCustomer(c);
+    	
+    	session.save(c);
+    	t.commit();
+    	
+    	session.close();
+    	
+    	System.out.println("Booking done for customer");
+    }
+}
