@@ -1,0 +1,55 @@
+package com.Entity;
+
+
+	import javax.persistence.Entity;
+	import javax.persistence.GeneratedValue;
+	import javax.persistence.GenerationType;
+	import javax.persistence.Id;
+	import javax.persistence.Table;
+
+
+		@Entity
+		@Table(name="Account_details")
+		public class User {
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private long AccountNo;
+		private String firstName,lastName;
+		private long phone;
+		private long AccountBalance;
+		
+		public long getAccountNo() {
+			return AccountNo;
+		}
+		public long getAccountBalance() {
+			return AccountBalance;
+		}
+		public void setAccountBalance(long accountBalance) {
+			AccountBalance = accountBalance;
+		}
+		public void setAccountNo(long accountNo) {
+			AccountNo = accountNo;
+		}
+		public String getFirstName() {
+			return firstName;
+		}
+		public void setFirstName(String firstName) {
+			this.firstName = firstName;
+		}
+		public String getLastName() {
+			return lastName;
+		}
+		public void setLastName(String lastName) {
+			this.lastName = lastName;
+		}
+		public long getPhone() {
+			return phone;
+		}
+		public void setPhone(long phone) {
+			this.phone = phone;
+		}
+		
+
+}
+
+
