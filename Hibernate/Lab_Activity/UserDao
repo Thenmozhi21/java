@@ -1,0 +1,10 @@
+package com.Dao;
+
+public interface UserDao
+{
+	public void WithdrawAmt();
+	public void DepositAmt();
+	public void createAccount();
+	public void checkBalance();
+
+}
