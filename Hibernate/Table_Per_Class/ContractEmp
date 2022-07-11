@@ -1,0 +1,38 @@
+package com.Entity;
+
+
+	import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
+	@Entity
+	@Table(name="Contract_Emp")
+    @AttributeOverrides({
+   	 @AttributeOverride(name="empId" , column = @Column(name="empId")),
+   	 @AttributeOverride(name="empName" , column = @Column(name="empName")),
+   	 @AttributeOverride(name="empPhone" , column = @Column(name="empPhone")),
+   	 @AttributeOverride(name="empEmail" , column = @Column(name="empEmail"))
+    })
+	public class ContractEmp extends Employee
+	{
+
+		private int contractPeriod;
+		private float salary_per_hour;
+		
+		public int getContractPeriod() {
+			return contractPeriod;
+		}
+		public void setContractPeriod(int contractPeriod) {
+			this.contractPeriod = contractPeriod;
+		}
+		public float getSalary_per_hour() {
+			return salary_per_hour;
+		}
+		public void setSalary_per_hour(float salary_per_hour) {
+			this.salary_per_hour = salary_per_hour;
+		}
+		
+}
