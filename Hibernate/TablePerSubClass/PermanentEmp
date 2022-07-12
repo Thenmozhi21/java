@@ -1,0 +1,31 @@
+package com.Entity;
+
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+		    @Entity
+	     	@Table(name="Permanent_Emp")
+	        @PrimaryKeyJoinColumn(name="empId")
+		public class PermanentEmp extends Employee
+		{
+
+			private float Salary;
+			private int travelAllowance;
+			
+			public float getSalary() {
+				return Salary;
+			}
+			public void setSalary(float salary) {
+				Salary = salary;
+			}
+			public int getTravelAllowance() {
+				return travelAllowance;
+			}
+			public void setTravelAllowance(int travelAllowance) {
+				this.travelAllowance = travelAllowance;
+			}
+			
+	}
+
+
