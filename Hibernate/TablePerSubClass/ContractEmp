@@ -1,0 +1,31 @@
+package com.Entity;
+	
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+
+		@Entity
+		@Table(name="Contract_Emp")
+		@PrimaryKeyJoinColumn(name="empId")
+	    
+		public class ContractEmp extends Employee
+		{
+
+			private int contractPeriod;
+			private float salary_per_hour;
+			
+			public int getContractPeriod() {
+				return contractPeriod;
+			}
+			public void setContractPeriod(int contractPeriod) {
+				this.contractPeriod = contractPeriod;
+			}
+			public float getSalary_per_hour() {
+				return salary_per_hour;
+			}
+			public void setSalary_per_hour(float salary_per_hour) {
+				this.salary_per_hour = salary_per_hour;
+			}
+			
+}
