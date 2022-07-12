@@ -1,0 +1,43 @@
+package com.Entity;
+
+import javax.persistence.*;
+
+	    @Table(name="Employee_Details")
+		@Entity
+		@Inheritance(strategy=InheritanceType.JOINED)
+		
+		public class Employee {
+
+			@Id
+			@GeneratedValue(strategy = GenerationType.AUTO)
+			private int empId;
+			private String empName;
+			private long empPhone;
+			private String empEmail;
+			
+			public int getEmpId() {
+				return empId;
+			}
+			public void setEmpId(int empId) {
+				this.empId = empId;
+			}
+			public String getEmpName() {
+				return empName;
+			}
+			public void setEmpName(String empName) {
+				this.empName = empName;
+			}
+			public long getEmpPhone() {
+				return empPhone;
+			}
+			public void setEmpPhone(long empPhone) {
+				this.empPhone = empPhone;
+			}
+			public String getEmpEmail() {
+				return empEmail;
+			}
+			public void setEmpEmail(String empEmail) {
+				this.empEmail = empEmail;
+			}
+			
+}
