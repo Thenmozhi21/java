@@ -1,0 +1,28 @@
+package project;
+import java.util.*;
+public class Employee 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter salary amount:");
+		int sal=s.nextInt();
+		int hra,da;
+		 if( sal > 5000 )  
+		    {  
+		        hra = sal * 10 / 200;  
+		        da  = sal * 90 / 100;  
+		    }  
+		    else  
+		    {  
+		       hra = 500;  
+		       da  = sal * 70 / 100;  
+		    }  
+		  
+		       int gs = sal + da + hra;  
+		       System.out.println("Gross salary:"+gs);
+
+	}
+
+}
